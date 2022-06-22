@@ -9,9 +9,8 @@ You have 30 minutes
 1. Fork and clone this repository.
 2. Change into the new directory.
 3. Create and checkout a new branch, named `response`.
-4. Install dependencies with `npm install`.
-5. Follow the directions given in .
-6. Before the allotted time is up, push to your fork and issue a pull request.
+4. Follow the directions given in [exercises/mongodb.md](exercises/mongodb.md).
+5. Before the allotted time is up, push to your fork and issue a pull request.
 
 Your pull request description should contain a "fist to five" for comfort and
 clarity. Additionally, you should mention the resources you used to help you
