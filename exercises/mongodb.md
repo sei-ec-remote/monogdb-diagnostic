@@ -33,8 +33,8 @@ Using [`.updateOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 
 ```js
 db.houses.updateOne({name: 'House Arryn'}, {$push: {members: 'Jon Arryn'}})
-db.houses.updateOne({name: 'House Stark'}, {$push: {members: 'Ned Stark', 'Arya Stark', 'Sansa Stark'}})
-db.houses.updateOne({name: 'House Targaryen'}, {$push: {members: 'Vuserys Targaryen', 'Daenerys Targaryen'}})
+db.houses.updateOne({name: 'House Stark'}, {$push: {members: {$each: ['Ned Stark', 'Arya Stark', 'Sansa Stark']}}})
+db.houses.updateOne({name: 'House Targaryen'}, {$push: {members: {$each: ['Viserys Targaryen', 'Daenerys Targaryen']}}})
 ```
 
 ### Question 3
@@ -42,7 +42,7 @@ db.houses.updateOne({name: 'House Targaryen'}, {$push: {members: 'Vuserys Targar
 House Arryn is not honorable! Using [`.updateOne()`](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateOne/) and `$unset`, remove their house motto.
 
 ```js
-db.houses.updateOne({name: 'House Arryn'}, {$unset: {motto: ""}})
+db.houses.updateOne({name: 'House Arryn'}, {$unset: {motto: ''}})
 ```
 
 ### Question 4
