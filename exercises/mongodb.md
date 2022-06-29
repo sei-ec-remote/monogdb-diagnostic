@@ -16,6 +16,10 @@ Using [`.insertOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 
 ```js
 // answer here
+// db.createCollection('houses')
+// db.houses.insertOne({name: 'Arryn', motto: 'As High as Honor'})
+// db.houses.insertOne({name: 'Stark', motto: 'Winter is Coming'})
+// db.houses.insertOne({name: 'Targaryen', motto: 'Fire and Blood'})
 ```
 
 ### Question 2
@@ -31,6 +35,8 @@ Using [`.updateOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 
 ```js
 // answer here
+// db.houses.findAndModify({query:{name: 'Stark'}, update:{$set:{members: 'Ned Stark'}},upsert:true})
+// ???????????????????????????
 ```
 
 ### Question 3

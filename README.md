@@ -1,7 +1,7 @@
 # Diagnostic
 
 You have 30 minutes
-
+   
 ## Instructions
 
 1. Fork and clone this repository.
