@@ -15,7 +15,9 @@ Using [`.insertOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 - House Targaryen, motto 'Fire and Blood'
 
 ```js
-// answer here
+db.houses.insertOne({ name: 'House Arryn', motto: 'As High as Honor'})
+db.houses.insertOne({name: 'House Stark', motto: 'Winter is Coming'})
+db.houses.insertOne({name: 'House Targaryen', motto: 'Fire and Blood'})
 ```
 
 ### Question 2
@@ -30,7 +32,9 @@ Using [`.updateOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 - Jon Arryn
 
 ```js
-// answer here
+db.houses.updateOne({name: 'House Arryn'}, {$push: {members: 'Jon Arryn'}})
+db.houses.updateOne({name: 'House Stark'}, {$push: {members: 'Ned Stark', 'Arya Stark', 'Sansa Stark'}})
+db.houses.updateOne({name: 'House Targaryen'}, {$push: {members: 'Vuserys Targaryen', 'Daenerys Targaryen'}})
 ```
 
 ### Question 3
@@ -38,7 +42,7 @@ Using [`.updateOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 House Arryn is not honorable! Using [`.updateOne()`](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateOne/) and `$unset`, remove their house motto.
 
 ```js
-// answer here
+db.houses.updateOne({name: 'House Arryn'}, {$unset: {motto: ""}})
 ```
 
 ### Question 4
@@ -46,5 +50,5 @@ House Arryn is not honorable! Using [`.updateOne()`](https://www.mongodb.com/doc
 Remove house Stark! Using [`.deleteOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.deleteOne/), remove house Stark.
 
 ```js
-// answer here
+db.houses.deleteOne({name: 'House Stark'})
 ```
