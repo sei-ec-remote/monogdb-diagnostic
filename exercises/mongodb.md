@@ -15,9 +15,9 @@ Using [`.insertOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 - House Targaryen, motto 'Fire and Blood'
 
 ```js
-db.houses.insertOne({name: 'House Arryn'}, {moto: 'As High as Honor'})
-db.houses.insertOne({name: 'House Stark'}, {moto: 'Winter is Coming'})
-db.houses.insertOne({name: 'House Targaryen'}, {moto: 'Fire and Blood'})
+db.houses.insertOne({name: 'House Arryn', moto: 'As High as Honor'})
+db.houses.insertOne({name: 'House Stark', moto: 'Winter is Coming'})
+db.houses.insertOne({name: 'House Targaryen', moto: 'Fire and Blood'})
 ```
 
 ### Question 2
