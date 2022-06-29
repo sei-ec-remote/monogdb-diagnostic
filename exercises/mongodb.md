@@ -16,6 +16,18 @@ Using [`.insertOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 
 ```js
 // answer here
+db.houses.insertOne({
+    name: 'House Arryn', 
+    moto: 'As High as Honor'
+    })
+db.houses.insertOne({
+        name: 'House Stark',
+        moto: 'Winter is Coming'
+    })
+db.houses.insertOne({
+        name: 'House Targaryen',
+        moto: 'Fire and Blood'
+    })
 ```
 
 ### Question 2
@@ -31,6 +43,16 @@ Using [`.updateOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 
 ```js
 // answer here
+db.houses.updateOne(
+    {name: /Stark/}, 
+    {$push: {members: {$each: ['Ned Stark', 'Arya Stark', 'Sanas Stark']}}}
+    )
+db.houses.updateOne(
+    {name: /Targaryen/}, 
+    {$push: {members: {$each: ['Viserys Targaryen', 'Daenerys Targaryen']}}}
+    )
+db.houses.updateOne({name: /Arryn/}, {$push: {members:'Jon Arryn'}})
+
 ```
 
 ### Question 3
@@ -39,6 +61,7 @@ House Arryn is not honorable! Using [`.updateOne()`](https://www.mongodb.com/doc
 
 ```js
 // answer here
+db.houses.updateOne({name: /Arryn/}, {$unset: {moto: ''}})
 ```
 
 ### Question 4
@@ -47,4 +70,5 @@ Remove house Stark! Using [`.deleteOne()](https://www.mongodb.com/docs/manual/re
 
 ```js
 // answer here
+db.houses.deleteOne({name: /Stark/})
 ```
