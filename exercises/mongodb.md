@@ -16,6 +16,14 @@ Using [`.insertOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 
 ```js
 // answer here
+// sh scripts/import/houses.sh
+//mongosh < scripts/incert/houses.js
+
+use mongo-crud
+
+db.houses.insertOne({name: 'Arryn', moto: 'As High as Honor'})
+db.houses.insertOne({name: 'Stark', moto: 'Winter is Coming'})
+db.houses.insertOne({name: 'Targaryen', moto: 'Fire and Blood'})
 ```
 
 ### Question 2
@@ -31,7 +39,8 @@ Using [`.updateOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 
 ```js
 // answer here
-```
+db.houses.updateOne({ $set: { members: 'Ned Stark' }, $push: {members: 'Ned Stark'}})
+   
 
 ### Question 3
 
