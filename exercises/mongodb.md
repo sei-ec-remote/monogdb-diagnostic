@@ -56,5 +56,5 @@ Remove house Stark! Using [`.deleteOne()](https://www.mongodb.com/docs/manual/re
 
 ```js
 // answer here
-db.houses.deleteOne()
+db.houses.deleteOne({name: 'House Stark'})
 ```
