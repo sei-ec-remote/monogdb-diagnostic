@@ -68,8 +68,9 @@ House Arryn is not honorable! Using [`.updateOne()`](https://www.mongodb.com/doc
 
 ```js
 db.houses.updateOne(
-    {$unset: {motto: ""}}
-    )
+    {name: 'House Arryn'},
+    {$unset: {motto: 'As High as Honor'}}
+) 
 ```
 
 ### Question 4
@@ -77,5 +78,7 @@ db.houses.updateOne(
 Remove house Stark! Using [`.deleteOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.deleteOne/), remove house Stark.
 
 ```js
-// answer here
+db.houses.deleteOne({
+    name: 'House Stark'
+})
 ```
