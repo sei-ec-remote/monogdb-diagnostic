@@ -2,7 +2,7 @@
 
 This file is a **markdown** file. Markdown is a special way of formatting text, and one that's used by GitHub in its README files.
 
-Goal: Read each question and write code to complete each task. Each question is going to assume we have a collection called `houses` in our database. 
+Goal: Read each question and write code to complete each task. Each question is going to assume we have a collection called `houses` in our database.
 
 Test: There are no tests for this diagnostic. You can test your code in your `mongosh` repl making sure to create a collection called `houses` to make your changes in.
 
@@ -15,7 +15,9 @@ Using [`.insertOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 - House Targaryen, motto 'Fire and Blood'
 
 ```js
-// answer here
+db.houses.insertOne({ house: "Arryn", motto: "As High as Honor" });
+db.houses.insertOne({ house: "Stark", motto: "Winteris Coming" });
+db.houses.insertOne({ house: "Targaryen", motto: "Fire and Blood" });
 ```
 
 ### Question 2
@@ -30,7 +32,11 @@ Using [`.updateOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 - Jon Arryn
 
 ```js
-// answer here
+db.houses.updateOne({house: 'Stark'}, $push{members: 'Ned'})
+db.houses.updateOne({house: 'Stark'}, $push{members: 'Arya'})
+db.houses.updateOne({house: 'Stark'}, $push{members: 'Sansa'})
+db.houses.updateOne({house: 'Targaryen'}, $push{members: 'Viserys'})
+db.houses.updateOne({house: 'Targaryen'}, $push{members: 'Daenerys'})
 ```
 
 ### Question 3
@@ -38,7 +44,7 @@ Using [`.updateOne()`](https://www.mongodb.com/docs/manual/reference/method/db.c
 House Arryn is not honorable! Using [`.updateOne()`](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateOne/) and `$unset`, remove their house motto.
 
 ```js
-// answer here
+db.houses.updateOne({house: 'Arrtn'}, $unset{Moto: 'As High as Honor'})
 ```
 
 ### Question 4
@@ -46,5 +52,5 @@ House Arryn is not honorable! Using [`.updateOne()`](https://www.mongodb.com/doc
 Remove house Stark! Using [`.deleteOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.deleteOne/), remove house Stark.
 
 ```js
-// answer here
+db.houses.deleteOne({ house: "Stark" });
 ```
